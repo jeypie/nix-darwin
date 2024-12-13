@@ -1,8 +1,9 @@
 {
-  description = "Michaels Macos system flake";
+  description = "DrackThor's macOS system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -19,10 +20,17 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, ... }: {
-      darwinConfigurations."macos" =
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, ... }:
+  let
+        hostname = "DrackBook";
+        user = "drackthor";
+        arch = "aarch64-darwin";
+  in
+  {
+      darwinConfigurations.${hostname} =
         nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
+          system = arch;
+
           modules = [
             ./darwin.nix
             nix-homebrew.darwinModules.nix-homebrew
@@ -35,7 +43,7 @@
                 enableRosetta = true;
 
                 # User owning the Homebrew prefix
-                user = "michaelklug";
+                user = user;
 
                 # Automatically migrate existing Homebrew installations
                 autoMigrate = true;
@@ -45,10 +53,10 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.michaelklug = import ./home.nix;
+              home-manager.users.${user} = import ./home.nix;
             }
           ];
         };
-        darwinPackages = self.darwinConfigurations."macos".pkgs;
+        darwinPackages = self.darwinConfigurations.${hostname}.pkgs;
       };
-}
+  }

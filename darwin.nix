@@ -1,16 +1,20 @@
 { pkgs, ... }: {
   environment.systemPackages =
     [
-      #pkgs.awscli2
+      # pkgs.awscli2
+      # pkgs.argocd
+      # pkgs.lens
+      # pkgs.kubectx
+      # pkgs.terragrunt
+      # pkgs.vscode
+      # kgs.telegram-desktop # currently not working
+      # pkgs.glab
+      pkgs.git
       pkgs.yq-go
       pkgs.jq
-      pkgs.lens
       pkgs.direnv
       pkgs.nix-direnv
-      pkgs.argocd
-      pkgs.signal-desktop
       pkgs.k9s
-      # pkgs.azure-cli # currently not working
       pkgs.eza
       pkgs.fzf
       pkgs.fzf-zsh
@@ -20,35 +24,39 @@
       pkgs.go
       pkgs.kubectl
       pkgs.kubernetes-helm
-      pkgs.kubectx
       pkgs.wget
       pkgs.unixtools.watch
       pkgs.tilt
       pkgs.terraform
-      pkgs.terragrunt
       pkgs.pre-commit
       pkgs.inetutils
       pkgs.zsh-autosuggestions
       pkgs.zsh-syntax-highlighting
       pkgs.snyk
-      pkgs.vscode
       pkgs.docker-client
       pkgs.tree
       pkgs.raycast
       pkgs.discord
       pkgs.mas
       pkgs.iterm2
-      pkgs.slack
-      # kgs.telegram-desktop # currently not working
       pkgs.nmap
       pkgs.nix-index
-      pkgs.glab
+      pkgs.spotify
+      pkgs.bartender
+      # pkgs.airbuddy
+      pkgs.drawio
+      pkgs.zoom-us
+      pkgs.obsidian
+      pkgs.arc-browser
+      pkgs.openvpn
+      pkgs.unifi
+      pkgs.boundary
     ];
 
   # allow packages which are not open source
   nixpkgs.config.allowUnfree = true;
 
-  users.users.michaelklug.home = "/Users/michaelklug";
+  users.users.drackthor.home = "/Users/drackthor";
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
@@ -81,31 +89,36 @@
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
+      # Cisco Anyconnect
+
     casks = [
-      "1password"
-      "roon"
+      # "1password"
       "microsoft-office"
       "microsoft-auto-update"
       "microsoft-teams"
-      "devpod"
-      "jetbrains-toolbox"
-      "obs"
-      "sony-ps-remote-play"
-      "qobuz"
-      "rancher"
-      "telegram"
-      "tidal"
-      "whatsapp"
+      # "jetbrains-toolbox"
       "wifiman"
-      "steam"
-      "calibre"
-      "windows-app"
-      "chatgpt"
-      "google-chrome"
+      # "steam"
+      # "google-chrome"
+      "screen-studio"
+      "fixkey"
+      "istat-menus"
+      "cleanshot"
+      "textsniper"
+      # "rambox"
+      "webex"
+      "citrix-workspace"
+      # "bitwarden"
+      "elgato-stream-deck"
+      "vlc"
+      "obs"
+      "daisydisk"
+      "airbuddy"
     ];
     masApps = {
-      "Goodnotes" = 1444383602;
-      "1Password-Safari" = 1569813296;
+      "Parallels Desktop" = 1085114709;
+      "PDF Gear" = 6469021132;
+      "TeleprompterPAD" = 1507218595;
     };
   };
 
@@ -114,56 +127,30 @@
     dock.mru-spaces = false; # i love this, macos will not rearrange the desktops
     dock.magnification = true;
     dock.persistent-apps = [
-      "/System/Cryptexes/App/System/Applications/Safari.app"
       "${pkgs.iterm2}/Applications/iTerm2.app"
       "${pkgs.slack}/Applications/Slack.app"
       "/Applications/Microsoft Outlook.app"
       "/Applications/Microsoft Teams.app"
-      "/Applications/Roon.app"
       "/Applications/1Password.app"
+      "/Applications/Spotify.app"
+      "/Applications/Rambox.app"
+      "/Applications/Arc.app"
+      "/Applications/Obsidian.app"
+      "/Applications/Google Chrome.app"
+      "/Applications/Google Chrome.app"
     ];
     dock.persistent-others = [
       # sadly need to use CustomUserPreferences at the moment because you can not configure fan etc. here
-      #"/Users/michaelklug/Downloads"
+      #"/Users/drackthor/Downloads"
       #"/Applications"
     ];
     CustomUserPreferences = {
-      # Sets Downloads folder with fan view in Dock
-      "com.apple.dock" = {
-        persistent-others = [
-          {
-            "tile-data" = {
-              "file-data" = {
-                "_CFURLString" = "/Users/michaelklug/Downloads"; # TODO: don't hardcode this
-                "_CFURLStringType" = 0;
-              };
-              # Optional: sorting order
-              # 1 -> Name | 2 -> Date Added | 3 -> Date Modified
-              # 4 -> Date Created | 5 -> Kind
-              "arrangement" = 2;
-              # 0 -> Stack | 1 -> Folder
-              "displayas" = 0;
-              # 0 -> Automatic | 1 -> Fan | 2 -> Grid | 3 -> List
-              "showas" = 1;
-            };
-            "tile-type" = "directory-tile";
-          }
-          {
-            "tile-data" = {
-              "file-data" = {
-                "_CFURLString" = "/Applications";
-                "_CFURLStringType" = 0;
-              };
-            };
-            "tile-type" = "directory-tile";
-          }
-        ];
-      };
+
     };
 
+    loginwindow.LoginwindowText = "FullStackS Oida!";
     finder.AppleShowAllExtensions = true;
-    finder.FXPreferredViewStyle = "clmv"; # does not work
+     # finder.FXPreferredViewStyle = "clmv"; # does not work
 
-    loginwindow.LoginwindowText = "FullStacks Oida!";
   };
 }

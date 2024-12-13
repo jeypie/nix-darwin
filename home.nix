@@ -10,11 +10,11 @@
 
   programs.git = {
     enable = false;
-    userName = "sadomasupilami";
-    userEmail = "michiklug85@gmail.com";
+    userName = "Daniel Drack";
+    userEmail = "daniel.drack@fullstacks.eu";
     extraConfig = {
-      github.user = "sadoMasupilami";
-      init = { defaultBranch = "trunk"; };
+      github.user = "DrackThor";
+      init = { defaultBranch = "main"; };
       diff = { external = "${pkgs.difftastic}/bin/difft"; };
     };
   };
@@ -46,6 +46,9 @@
       k="kubectl";
       h="helm";
       t="terraform";
+      gst="git status";
+      ga="git add";
+      gcmsg="git commit -m";
     };
   };
 
