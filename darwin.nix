@@ -128,7 +128,6 @@
     dock.magnification = true;
     dock.persistent-apps = [
       "${pkgs.iterm2}/Applications/iTerm2.app"
-      "${pkgs.slack}/Applications/Slack.app"
       "/Applications/Microsoft Outlook.app"
       "/Applications/Microsoft Teams.app"
       "/Applications/1Password.app"
@@ -136,7 +135,6 @@
       "/Applications/Rambox.app"
       "/Applications/Arc.app"
       "/Applications/Obsidian.app"
-      "/Applications/Google Chrome.app"
       "/Applications/Google Chrome.app"
     ];
     dock.persistent-others = [
@@ -151,6 +149,5 @@
     loginwindow.LoginwindowText = "FullStackS Oida!";
     finder.AppleShowAllExtensions = true;
      # finder.FXPreferredViewStyle = "clmv"; # does not work
-
   };
 }
