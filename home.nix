@@ -2,10 +2,10 @@
 
 {
   home.stateVersion = "23.11";
+  fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    unixtools.ifconfig
-    unixtools.netstat
+    nerd-fonts.meslo-lg
   ];
 
   programs.git = {
@@ -25,7 +25,9 @@
     autosuggestion.enable = true;
     history.share = false;
     syntaxHighlighting.enable = true;
-    oh-my-zsh.enable = true;
+    oh-my-zsh = {
+      enable = true;
+    };
     autocd = true;
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
