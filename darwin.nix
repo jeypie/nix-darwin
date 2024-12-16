@@ -43,7 +43,6 @@
       pkgs.nix-index
       pkgs.spotify
       pkgs.bartender
-      # pkgs.airbuddy
       pkgs.drawio
       pkgs.zoom-us
       pkgs.obsidian
@@ -51,6 +50,8 @@
       pkgs.openvpn
       pkgs.unifi
       pkgs.boundary
+      pkgs.python313
+      pkgs.pyenv
     ];
 
   # allow packages which are not open source
@@ -108,7 +109,7 @@
       # "rambox"
       "webex"
       "citrix-workspace"
-      # "bitwarden"
+      "bitwarden"
       "elgato-stream-deck"
       "vlc"
       "obs"
