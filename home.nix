@@ -4,9 +4,9 @@
   home.stateVersion = "23.11";
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs; [
-    nerd-fonts.meslo-lg
-  ];
+#  home.packages = with pkgs; [
+#    nerd-fonts.meslo-lg
+#  ];
 
   programs.git = {
     enable = false;
@@ -45,6 +45,7 @@
       ll="ls -lh";
       l="ls -lah";
       la="ls -lah -a";
+      dir="ls -lah -a";
       k="kubectl";
       h="helm";
       t="terraform";
@@ -63,4 +64,11 @@
     enable = true;
     nix-direnv.enable = true;
   };
+
+#  programs.nixvim = {
+#    enable = true;
+#
+#    colorschemes.catppuccin.enable = true;
+#    plugins.lualine.enable = true;
+#  };
 }

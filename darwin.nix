@@ -54,9 +54,35 @@
       pkgs.pyenv
     ];
 
+  environment.variables = {
+    EDITOR = "vim";
+    LANG = "en_US.UTF-8";
+  };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.meslo-lg
+  ];
+
   # allow packages which are not open source
   nixpkgs.config.allowUnfree = true;
 
+  networking.computerName = "drackbook.local";
+  networking.hostName = "drackbook";
+  # networking.localHostName = "drackbook.local";
+  networking.knownNetworkServices = [
+    "USB 10/100/1000 LAN"
+    "USB 10/100/1000 LAN 2"
+    "USB 10/100/1000 LAN 3"
+    "USB 10/100/1000 LAN 4"
+    "Wi-Fi"
+    "Thunderbolt Bridge"
+    "iPhone USB"
+    "FullStackS Labor RRZ Graz"
+  ];
+  networking.dns = [
+    "8.8.8.8"
+    "1.1.1.1"
+  ];
   users.users.drackthor.home = "/Users/drackthor";
 
   # Auto upgrade nix package and the daemon service.
@@ -90,7 +116,7 @@
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
-      # Cisco Anyconnect
+    # Cisco Anyconnect
 
     casks = [
       # "1password"
