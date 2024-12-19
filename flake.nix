@@ -24,7 +24,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, ... }:
   let
-        hostname = "DrackBook";
+        hostname = "drackbook";
         user = "drackthor";
         arch = "aarch64-darwin";
   in

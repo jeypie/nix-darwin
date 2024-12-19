@@ -135,7 +135,6 @@
       # "rambox"
       "webex"
       "citrix-workspace"
-      "bitwarden"
       "elgato-stream-deck"
       "vlc"
       "obs"
@@ -146,6 +145,7 @@
       "Parallels Desktop" = 1085114709;
       "PDF Gear" = 6469021132;
       "TeleprompterPAD" = 1507218595;
+      "Bitwarden" = 1352778147;
     };
   };
 
@@ -158,10 +158,12 @@
       "/Applications/Microsoft Outlook.app"
       "/Applications/Microsoft Teams.app"
       "/Applications/1Password.app"
+      "/Applications/Bitwarden.app"
       "/Applications/Spotify.app"
       "/Applications/Rambox.app"
       "/Applications/Arc.app"
       "/Applications/Obsidian.app"
+      "/Users/drackthor/Applications/PyCharm Professional Edition.app"
       "/Applications/Google Chrome.app"
     ];
     dock.persistent-others = [
