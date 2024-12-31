@@ -39,6 +39,9 @@
       compdef __start_kubectl k
       compdef __start_helm h
       compdef __start_terraform t
+      # recreate ~/.kube/config from ~/.kube/configs/*
+      /Users/drackthor/.kube/configs/refresh.sh
+      # export KUBECONFIG=$(find "/Users/drackthor/.kube/configs" -maxdepth 1 -type f - -exec realpath {} \; | paste -sd ':' -)
       '';
     shellAliases = {
       ls="eza --icons --classify --group-directories-first";
@@ -52,12 +55,17 @@
       gst="git status";
       ga="git add";
       gcmsg="git commit -m";
+      code="pycharm";
     };
   };
 
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    fileWidgetCommand = "fd --type f ../../../";
+    fileWidgetOptions = [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
+    changeDirWidgetCommand = "fd --type d . /Users/drackthor";
+    changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
   };
 
   programs.direnv = {

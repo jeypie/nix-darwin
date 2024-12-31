@@ -52,6 +52,14 @@
       pkgs.boundary
       pkgs.python313
       pkgs.pyenv
+      pkgs.mani
+      pkgs.bat
+      pkgs.fd
+
+      # pkgs.cdrtools
+      # pkgs.libisoburn
+      # pkgs.dosfstools
+      # pkgs.mtools
     ];
 
   environment.variables = {
@@ -140,6 +148,7 @@
       "obs"
       "daisydisk"
       "airbuddy"
+      "ghostty"
     ];
     masApps = {
       "Parallels Desktop" = 1085114709;
