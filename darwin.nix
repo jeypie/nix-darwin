@@ -1,75 +1,9 @@
-{ pkgs, ... }: {
-  environment.systemPackages =
-    [
-      # pkgs.awscli2
-      # pkgs.argocd
-      # pkgs.lens
-      # pkgs.kubectx
-      # pkgs.terragrunt
-      # pkgs.vscode
-      # kgs.telegram-desktop # currently not working
-      # pkgs.glab
-      pkgs.git
-      pkgs.yq-go
-      pkgs.jq
-      pkgs.direnv
-      pkgs.nix-direnv
-      pkgs.k9s
-      pkgs.eza
-      pkgs.fzf
-      pkgs.fzf-zsh
-      pkgs.zsh-fzf-tab
-      pkgs.oh-my-zsh
-      pkgs.zsh-powerlevel10k
-      pkgs.go
-      pkgs.kubectl
-      pkgs.kubernetes-helm
-      pkgs.wget
-      pkgs.unixtools.watch
-      pkgs.tilt
-      pkgs.terraform
-      pkgs.pre-commit
-      pkgs.inetutils
-      pkgs.zsh-autosuggestions
-      pkgs.zsh-syntax-highlighting
-      pkgs.snyk
-      pkgs.docker-client
-      pkgs.tree
-      pkgs.raycast
-      pkgs.discord
-      pkgs.mas
-      pkgs.iterm2
-      pkgs.nmap
-      pkgs.nix-index
-      pkgs.spotify
-      pkgs.bartender
-      pkgs.drawio
-      pkgs.zoom-us
-      pkgs.obsidian
-      pkgs.arc-browser
-      pkgs.openvpn
-      pkgs.unifi
-      pkgs.boundary
-      pkgs.python313
-      pkgs.pyenv
-      pkgs.mani
-      pkgs.bat
-      pkgs.fd
-
-      # pkgs.cdrtools
-      # pkgs.libisoburn
-      # pkgs.dosfstools
-      # pkgs.mtools
-    ];
+{ pkgs, inputs,... }: {
 
   environment.variables = {
     EDITOR = "vim";
     LANG = "en_US.UTF-8";
   };
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.meslo-lg
-  ];
 
   # allow packages which are not open source
   nixpkgs.config.allowUnfree = true;

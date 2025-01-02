@@ -1,12 +1,13 @@
-{ config, lib, pkgs, ... }:
-
+{ config, pkgs, inputs,... }:
 {
   home.stateVersion = "23.11";
   fonts.fontconfig.enable = true;
 
-#  home.packages = with pkgs; [
-#    nerd-fonts.meslo-lg
-#  ];
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+    ./modules/nvim.nix
+    ./modules/packages.nix
+  ];
 
   programs.git = {
     enable = false;
@@ -25,6 +26,9 @@
     autosuggestion.enable = true;
     history.share = false;
     syntaxHighlighting.enable = true;
+    # sessionVariables = {
+    #     EDITOR = "nvim";
+    # };
     oh-my-zsh = {
       enable = true;
     };
@@ -62,7 +66,7 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    fileWidgetCommand = "fd --type f ../../../";
+    fileWidgetCommand = "fd --type f . /Users/drackthor/code";
     fileWidgetOptions = [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
     changeDirWidgetCommand = "fd --type d . /Users/drackthor";
     changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
@@ -72,11 +76,4 @@
     enable = true;
     nix-direnv.enable = true;
   };
-
-#  programs.nixvim = {
-#    enable = true;
-#
-#    colorschemes.catppuccin.enable = true;
-#    plugins.lualine.enable = true;
-#  };
 }
