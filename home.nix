@@ -9,11 +9,14 @@
     ./modules/packages.nix
   ];
 
+
   programs.git = {
     enable = false;
     userName = "Daniel Drack";
     userEmail = "daniel.drack@fullstacks.eu";
+    ignores = [ "*~" ".DS_Store" ];
     extraConfig = {
+      core.editor = "nvim";
       github.user = "DrackThor";
       init = { defaultBranch = "main"; };
       diff = { external = "${pkgs.difftastic}/bin/difft"; };
@@ -26,11 +29,12 @@
     autosuggestion.enable = true;
     history.share = false;
     syntaxHighlighting.enable = true;
-    # sessionVariables = {
-    #     EDITOR = "nvim";
-    # };
     oh-my-zsh = {
       enable = true;
+    };
+    sessionVariables = {
+      LANG = "en_US.UTF-8";
+      EDITOR = "nvim";
     };
     autocd = true;
     # if zsh startup time is slow, try this to debug
