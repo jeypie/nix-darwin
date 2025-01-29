@@ -18,7 +18,7 @@
     "USB 10/100/1000 LAN 4"
     "Wi-Fi"
     "Thunderbolt Bridge"
-    "iPhone USB"
+    "iPhone USB USB"
     "FullStackS Labor RRZ Graz"
   ];
   networking.dns = [
@@ -83,6 +83,7 @@
       "daisydisk"
       "airbuddy"
       "ghostty"
+      "calibre"
     ];
     masApps = {
       "Parallels Desktop" = 1085114709;

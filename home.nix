@@ -7,8 +7,9 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/nvim.nix
     ./modules/packages.nix
+    ./home/files.nix
+    ./home/library.nix
   ];
-
 
   programs.git = {
     enable = false;
@@ -27,11 +28,47 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    history.share = false;
+    history = {
+        append = true;
+        share = false;
+        expireDuplicatesFirst = true;
+        ignoreAllDups = true;
+        ignoreSpace = true;
+        save = 10000;
+        size = 10000;
+    };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = ./home;
+        file = "zsh-p10k.zsh";
+      }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+    ];
+
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
+      plugins = [
+        "git"
+        "sudo"
+        "kubectl"
+        "helm"
+        "docker"
+        "terraform"
+      ];
     };
+
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
@@ -39,17 +76,28 @@
     autocd = true;
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
-    initExtra = ''
-      source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      source ${pkgs.terraform}/share/bash-completion/completions/terraform
-      compdef __start_kubectl k
-      compdef __start_helm h
-      compdef __start_terraform t
+      # source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+      # source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+      # source ${pkgs.terraform}/share/bash-completion/completions/terraform
+      # compdef __start_kubectl k
+      # compdef __start_helm h
+      # compdef __start_terraform t
       # recreate ~/.kube/config from ~/.kube/configs/*
-      /Users/drackthor/.kube/configs/refresh.sh
       # export KUBECONFIG=$(find "/Users/drackthor/.kube/configs" -maxdepth 1 -type f - -exec realpath {} \; | paste -sd ':' -)
+    initExtra = ''
+      /Users/drackthor/.kube/configs/refresh.sh
+      function cmdlib() {
+        local selected_command
+        selected_command=$(cat ~/.library | fzf --height=20 --border --prompt="Command: ")
+        if [[ -n $selected_command ]]; then
+            zle reset-prompt
+            BUFFER="$selected_command"
+            # zle accept-line
+        fi
+      }
+      zle -N cmdlib
+      bindkey '^[l' cmdlib
       '';
     shellAliases = {
       ls="eza --icons --classify --group-directories-first";
@@ -57,12 +105,6 @@
       l="ls -lah";
       la="ls -lah -a";
       dir="ls -lah -a";
-      k="kubectl";
-      h="helm";
-      t="terraform";
-      gst="git status";
-      ga="git add";
-      gcmsg="git commit -m";
       code="pycharm";
     };
   };

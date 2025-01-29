@@ -48,5 +48,7 @@
         bat
         fd
         nerd-fonts.meslo-lg
+        cnspec
+        cnquery
     ];
 }
