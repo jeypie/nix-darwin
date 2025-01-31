@@ -31,6 +31,13 @@ nix-store --gc
 
 ---
 
+## ℹ️ format nix code
+
+```shell
+# nixfmt will be installed with this config
+find . -type f -name "*.nix" | xargs nixfmt
+```
+
 ### 🛠 Additional Notes
 
 - Make sure your flake repository is up-to-date before running these commands.

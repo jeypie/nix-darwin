@@ -21,43 +21,42 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, ... }:
-  let
-        hostname = "drackbook";
-        user = "drackthor";
-        arch = "aarch64-darwin";
-  in
-  {
-      darwinConfigurations.${hostname} =
-        nix-darwin.lib.darwinSystem {
-          # inherir "inputs" from flake.lock to darwinConfiguration
-          specialArgs = { inherit inputs; };
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew
+    , homebrew-core, homebrew-cask, ... }:
+    let
+      hostname = "drackbook";
+      user = "drackthor";
+      arch = "aarch64-darwin";
+    in {
+      darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
+        # inherir "inputs" from flake.lock to darwinConfiguration
+        specialArgs = { inherit inputs; };
 
-          system = arch;
-          modules = [
-            ./darwin.nix
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                # Install Homebrew under the default prefix
-                enable = true;
-                # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-                enableRosetta = true;
-                # User owning the Homebrew prefix
-                user = user;
-                # Automatically migrate existing Homebrew installations
-                autoMigrate = true;
-              };
-            }
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {inherit inputs;};
-              home-manager.users.${user} = import ./home.nix;
-            }
-          ];
-        };
-        darwinPackages = self.darwinConfigurations.${hostname}.pkgs;
+        system = arch;
+        modules = [
+          ./darwin.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              # Install Homebrew under the default prefix
+              enable = true;
+              # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+              enableRosetta = true;
+              # User owning the Homebrew prefix
+              user = user;
+              # Automatically migrate existing Homebrew installations
+              autoMigrate = true;
+            };
+          }
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.${user} = import ./home.nix;
+          }
+        ];
       };
-  }
+      darwinPackages = self.darwinConfigurations.${hostname}.pkgs;
+    };
+}

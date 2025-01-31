@@ -1,0 +1,49 @@
+# .pre-commit-config.yaml
+repos:
+  # overall file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+        args:
+          - --allow-multiple-documents
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-byte-order-marker
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
+      - id: debug-statements
+      - id: destroyed-symlinks
+      - id: detect-aws-credentials
+      - id: detect-private-key
+        exclude: |
+          (?x)(
+              ^creds/|
+              ^README.md
+          )
+  # commit-message & author
+  # https://jorisroovers.com/gitlint/
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
+        args:
+          - -cgeneral.verbosity=2
+          - -cgeneral.ignore=B6
+          - -cgeneral.ignore-merge-commits=true
+          - -cgeneral.regex-style-search=True
+          - -cgeneral.staged=true
+          - -ctitle-max-length.line-length=80
+          - '-ctitle-match-regex.regex=^(feat|fix|try|maintain)!?(\(.*\))?:.+|^Merge branch.*'
+          - "-cauthor-valid-email.regex=[^@]+@fullstacks.eu"
+          - --msg-filename
+
+# does not work yet..
+#  - repo: https://github.com/NixOS/nixfmt
+#    rev: master
+#    hooks:
+#      - id: nixfmt

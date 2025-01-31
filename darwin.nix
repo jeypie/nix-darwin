@@ -1,4 +1,4 @@
-{ pkgs, inputs,... }: {
+{ pkgs, inputs, ... }: {
 
   environment.variables = {
     EDITOR = "vim";
@@ -21,10 +21,7 @@
     "iPhone USB USB"
     "FullStackS Labor RRZ Graz"
   ];
-  networking.dns = [
-    "8.8.8.8"
-    "1.1.1.1"
-  ];
+  networking.dns = [ "8.8.8.8" "1.1.1.1" ];
   users.users.drackthor.home = "/Users/drackthor";
 
   # Auto upgrade nix package and the daemon service.
@@ -34,9 +31,7 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
-  programs.zsh = {
-    enable = true;
-  };
+  programs.zsh = { enable = true; };
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = null;
@@ -95,7 +90,8 @@
 
   system.defaults = {
     dock.autohide = true;
-    dock.mru-spaces = false; # i love this, macos will not rearrange the desktops
+    dock.mru-spaces =
+      false; # i love this, macos will not rearrange the desktops
     dock.magnification = true;
     dock.persistent-apps = [
       "${pkgs.iterm2}/Applications/iTerm2.app"
@@ -121,6 +117,6 @@
 
     loginwindow.LoginwindowText = "FullStackS Oida!";
     finder.AppleShowAllExtensions = true;
-     # finder.FXPreferredViewStyle = "clmv"; # does not work
+    # finder.FXPreferredViewStyle = "clmv"; # does not work
   };
 }

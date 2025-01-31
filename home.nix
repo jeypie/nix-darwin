@@ -1,5 +1,4 @@
-{ config, pkgs, inputs,... }:
-{
+{ config, pkgs, inputs, ... }: {
   home.stateVersion = "23.11";
   fonts.fontconfig.enable = true;
 
@@ -29,13 +28,13 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     history = {
-        append = true;
-        share = false;
-        expireDuplicatesFirst = true;
-        ignoreAllDups = true;
-        ignoreSpace = true;
-        save = 10000;
-        size = 10000;
+      append = true;
+      share = false;
+      expireDuplicatesFirst = true;
+      ignoreAllDups = true;
+      ignoreSpace = true;
+      save = 10000;
+      size = 10000;
     };
 
     plugins = [
@@ -59,14 +58,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "git"
-        "sudo"
-        "kubectl"
-        "helm"
-        "docker"
-        "terraform"
-      ];
+      plugins = [ "git" "sudo" "kubectl" "helm" "docker" "terraform" ];
     };
 
     sessionVariables = {
@@ -76,36 +68,27 @@
     autocd = true;
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
-      # source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-      # source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      # source ${pkgs.terraform}/share/bash-completion/completions/terraform
-      # compdef __start_kubectl k
-      # compdef __start_helm h
-      # compdef __start_terraform t
-      # recreate ~/.kube/config from ~/.kube/configs/*
-      # export KUBECONFIG=$(find "/Users/drackthor/.kube/configs" -maxdepth 1 -type f - -exec realpath {} \; | paste -sd ':' -)
     initExtra = ''
       /Users/drackthor/.kube/configs/refresh.sh
       function cmdlib() {
         local selected_command
-        selected_command=$(cat ~/.library | fzf --height=20 --border --prompt="Command: ")
+        selected_command=$(cat ~/.library | perl -0 -pe 's/\n+(?!#)/\n\0/g' | bat --plain --language bash --color always |  fzf --read0 --ansi --highlight-line --multi --height=20 --border --prompt="Command: ")
         if [[ -n $selected_command ]]; then
             zle reset-prompt
             BUFFER="$selected_command"
-            # zle accept-line
+            # zle accept-line # execute instantly
         fi
       }
       zle -N cmdlib
       bindkey '^[l' cmdlib
-      '';
+    '';
     shellAliases = {
-      ls="eza --icons --classify --group-directories-first";
-      ll="ls -lh";
-      l="ls -lah";
-      la="ls -lah -a";
-      dir="ls -lah -a";
-      code="pycharm";
+      ls = "eza --icons --classify --group-directories-first";
+      ll = "ls -lh";
+      l = "ls -lah";
+      la = "ls -lah -a";
+      dir = "ls -lah -a";
+      code = "pycharm";
     };
   };
 
@@ -113,7 +96,8 @@
     enable = true;
     enableZshIntegration = true;
     fileWidgetCommand = "fd --type f . /Users/drackthor/code";
-    fileWidgetOptions = [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
+    fileWidgetOptions =
+      [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
     changeDirWidgetCommand = "fd --type d . /Users/drackthor";
     changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
   };
