@@ -77,7 +77,6 @@
       "obs"
       "daisydisk"
       "airbuddy"
-      "ghostty"
       "calibre"
     ];
     masApps = {

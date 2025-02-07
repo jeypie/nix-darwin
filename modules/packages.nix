@@ -50,5 +50,6 @@
     cnspec
     cnquery
     nixfmt
+    bruno
   ];
 }

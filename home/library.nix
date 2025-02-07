@@ -15,9 +15,6 @@
       curl -X POST https://url -d '{"attributes": {"login_name": "fullstacks"}}'
       # curl POST
 
-      netstat -a | grep -i "listen"
-      # listening connections
-
       zsh_stats
       # show most used commands
 
@@ -41,6 +38,66 @@
 
       pre-commit install && pre-commit install --hook-type commit-msg
       # install pre-commit hooks in repo
+
+      bat /etc/protocols
+      # see protocols and numbers
+
+      netstat -a | grep -i "listen"
+      # listening connections
+
+      netstat -i
+      # data-link statistics | get interfaces
+
+      netstat -rn
+      # display routing table
+
+      netstat -s
+      # get statistics per protocol
+
+      netstat -ap tcp
+      # filter for protocol in /etc/protocols
+
+      lsof -i
+      # -n to omit dns lookup
+
+      lsof -iTCP -sTCP:LISTEN
+      # list TCP listen sockets
+      # -i{tcp/udp/4/6} -s{protocol}:{state}
+
+      host hostname
+      # nslookup replacement
+
+      tcpdump -D
+      # get available capture interfaces
+
+      sudo tcpdump -ni 2 arp
+      # listen for arp on interface 2, no DNS
+
+      sudo tcpdump -n dst host drackthor.me and port 443
+      # listen for dest website traffic
+
+      sudo tcpdump -w /tmp/capture.pcap
+      # write to .pcap file
+      # read with -r /tmp/capture.pcap
+
+      nc -v hostname port
+      # open netcat tcp connection
+      # -u for UDP
+
+      nc -l port
+      # listen on TCP port
+      # -u for UDP
+
+      cat asdf.txt | nc server.ip.here 11111
+      # above sender, below receiver
+      # nc -l 11111 > asdf.txt < /dev/null
+      # send files via netcat
+
+      tracerouce host
+      # see hops to target
+
+      whois domain
+      # domain whois lookup
     '';
   };
 }

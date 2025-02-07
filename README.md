@@ -31,6 +31,16 @@ nix-store --gc
 
 ---
 
+## ⬆️ Update
+
+To update the packages in your current flake, run:
+
+```bash
+nix flake update
+```
+
+---
+
 ## ℹ️ format nix code
 
 ```shell
