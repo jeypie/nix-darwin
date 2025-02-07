@@ -98,6 +98,9 @@
 
       whois domain
       # domain whois lookup
+
+      ssh-add --apple-use-keychain ~/.ssh/id_rsa ~/.ssh/id_ecdsa
+      # add private keys to ssh agent
     '';
   };
 }
