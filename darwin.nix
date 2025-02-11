@@ -54,22 +54,25 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     # Cisco Anyconnect
+    brews = [
+        "snyk-cli"
+    ];
 
     casks = [
       # "1password"
+      # "google-chrome"
+      # "jetbrains-toolbox"
+      # "rambox"
+      # "steam"
       "microsoft-office"
       "microsoft-auto-update"
       "microsoft-teams"
-      # "jetbrains-toolbox"
       "wifiman"
-      # "steam"
-      # "google-chrome"
       "screen-studio"
       "fixkey"
       "istat-menus"
       "cleanshot"
       "textsniper"
-      # "rambox"
       "webex"
       "citrix-workspace"
       "elgato-stream-deck"

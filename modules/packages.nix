@@ -1,55 +1,54 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    git
-    yq-go
-    jq
+    arc-browser
+    bartender
+    bat
+    boundary
+    bruno
+    cnquery
+    cnspec
     direnv
-    nix-direnv
-    k9s
+    discord
+    docker-client
+    drawio
     eza
+    fd
     fzf
     fzf-zsh
-    zsh-fzf-tab
-    oh-my-zsh
-    zsh-powerlevel10k
+    git
     go
+    inetutils
+    iterm2
+    jq
+    k9s
     kubectl
     kubernetes-helm
-    wget
-    unixtools.watch
-    tilt
-    terraform
-    pre-commit
-    inetutils
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    snyk
-    docker-client
-    tree
-    raycast
-    discord
-    mas
-    iterm2
-    nmap
-    nix-index
-    spotify
-    bartender
-    drawio
-    zoom-us
-    obsidian
-    arc-browser
-    openvpn
-    unifi
-    boundary
-    python313
-    pyenv
     mani
-    bat
-    fd
+    mas
     nerd-fonts.meslo-lg
-    cnspec
-    cnquery
+    nix-direnv
+    nix-index
     nixfmt
-    bruno
+    nmap
+    obsidian
+    oh-my-zsh
+    openvpn
+    pre-commit
+    pyenv
+    python313
+    raycast
+    spotify
+    terraform
+    tilt
+    tree
+    unifi
+    unixtools.watch
+    wget
+    yq-go
+    zoom-us
+    zsh-autosuggestions
+    zsh-fzf-tab
+    zsh-powerlevel10k
+    zsh-syntax-highlighting
   ];
 }
