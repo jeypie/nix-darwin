@@ -97,7 +97,9 @@
     dock.magnification = true;
     dock.persistent-apps = [
       "${pkgs.iterm2}/Applications/iTerm2.app"
-      "/Applications/Microsoft Outlook.app"
+      # "/Applications/Microsoft Outlook.app"
+      "/System/Applications/Calendar.app"
+      "/System/Applications/Mail.app"
       "/Applications/Microsoft Teams.app"
       "/Applications/1Password.app"
       "/Applications/Bitwarden.app"
