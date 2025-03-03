@@ -5,11 +5,9 @@
     text = ''
       #!/usr/bin/env bash
 
-      export KUBECONFIG=$(find ~/.kube/configs -type f ! -name '*.md' ! -name '*.sh' | tr '\n' ':')
-      kubectl config view --flatten > ~/tmp/all-in-one-kubeconfig.yaml
-      mv ~/tmp/all-in-one-kubeconfig.yaml ~/.kube/config
-      chmod 600 ~/.kube/config
-      export KUBECONFIG=~/.kube/config
+      export KUBECONFIG="/Users/drackthor/.kube/config:$(find ~/.kube/configs -type f ! -name '*.md' ! -name '*.sh' | tr '\n' ':')"
+      kubectl config view --flatten > ~/.kube/config-local
+      chmod 600 ~/.kube/config-local
     '';
   };
 }

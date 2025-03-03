@@ -64,6 +64,8 @@
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
+      # KUBECONFIG see home/files.nix
+      KUBECONFIG = "/Users/drackthor/.kube/config-local";
     };
     autocd = true;
     # if zsh startup time is slow, try this to debug

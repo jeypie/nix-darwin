@@ -12,6 +12,9 @@
       darwin-rebuild switch --flake ~/code/repos/drackthor/nix-darwin
       # rebuild nix darwin dystem
 
+      nix flake update
+      # update packages in flake
+
       curl -X POST https://url -d '{"attributes": {"login_name": "fullstacks"}}'
       # curl POST
 

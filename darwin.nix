@@ -25,8 +25,9 @@
   users.users.drackthor.home = "/Users/drackthor";
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true; # outdated
   # nix.package = pkgs.nix;
+  nix.enable = true;
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
@@ -40,10 +41,10 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
 
-  nix.configureBuildUsers = true;
+  # nix.configureBuildUsers = true; # outdated
 
   # enables touch id authentication in shell
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -97,8 +98,8 @@
     dock.magnification = true;
     dock.persistent-apps = [
       "${pkgs.iterm2}/Applications/iTerm2.app"
-      # "/Applications/Microsoft Outlook.app"
-      "/System/Applications/Calendar.app"
+      "/Applications/Microsoft Outlook.app"
+      # "/System/Applications/Calendar.app"
       "/System/Applications/Mail.app"
       "/Applications/Microsoft Teams.app"
       "/Applications/1Password.app"

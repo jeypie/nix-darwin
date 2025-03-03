@@ -28,7 +28,7 @@
     nerd-fonts.meslo-lg
     nix-direnv
     nix-index
-    nixfmt
+    nixfmt-rfc-style
     nmap
     obsidian
     oh-my-zsh
