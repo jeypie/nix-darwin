@@ -1,5 +1,5 @@
 {
-  description = "DrackThor's macOS system flake";
+  description = "jan.hoepfner´s macOS system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -24,8 +24,8 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew
     , homebrew-core, homebrew-cask, ... }:
     let
-      hostname = "drackbook";
-      user = "drackthor";
+      hostname = "jpBook";
+      user = "jan.hoepfner";
       arch = "aarch64-darwin";
     in {
       darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {

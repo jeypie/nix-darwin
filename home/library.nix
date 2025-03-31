@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.file.".library" = {
     executable = false;
-    # DrackThor's Command Library
+    # jp's Command Library
     text = ''
       lsof -i
       # open network connections
@@ -9,7 +9,7 @@
       find / -type f -name '*changeme*'
       # find files
 
-      darwin-rebuild switch --flake ~/code/repos/drackthor/nix-darwin
+      darwin-rebuild switch --flake ~/code/repos/jan.hoepfner/nix-darwin
       # rebuild nix darwin dystem
 
       nix flake update
@@ -76,7 +76,7 @@
       sudo tcpdump -ni 2 arp
       # listen for arp on interface 2, no DNS
 
-      sudo tcpdump -n dst host drackthor.me and port 443
+      sudo tcpdump -n dst host jan.hoepfner.me and port 443
       # listen for dest website traffic
 
       sudo tcpdump -w /tmp/capture.pcap

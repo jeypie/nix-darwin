@@ -8,9 +8,9 @@
   # allow packages which are not open source
   nixpkgs.config.allowUnfree = true;
 
-  networking.computerName = "drackbook.local";
-  networking.hostName = "drackbook";
-  # networking.localHostName = "drackbook.local";
+  networking.computerName = "jpBook.local";
+  networking.hostName = "jpBook";
+  # networking.localHostName = "jpBook.local";
   networking.knownNetworkServices = [
     "USB 10/100/1000 LAN"
     "USB 10/100/1000 LAN 2"
@@ -22,7 +22,7 @@
     "FullStackS Labor RRZ Graz"
   ];
   networking.dns = [ "8.8.8.8" "1.1.1.1" ];
-  users.users.drackthor.home = "/Users/drackthor";
+  users.users."jan.hoepfner".home = "/Users/jan.hoepfner";
 
   # Auto upgrade nix package and the daemon service.
   # services.nix-daemon.enable = true; # outdated
@@ -60,39 +60,49 @@
     ];
 
     casks = [
-      # "1password"
+      "1password"
+      "daisydisk"
+      "drawio"
       # "google-chrome"
       # "jetbrains-toolbox"
       # "rambox"
       # "steam"
-      "microsoft-office"
-      "microsoft-auto-update"
-      "microsoft-teams"
+      # "microsoft-office"
+      # "microsoft-auto-update"
+      # "microsoft-teams"
+      "spotify"
       "wifiman"
       "screen-studio"
+      "flameshot"
       "fixkey"
-      "istat-menus"
+      # "istat-menus"
       "cleanshot"
       "textsniper"
       "webex"
       "citrix-workspace"
       "elgato-stream-deck"
       "vlc"
-      "obs"
-      "daisydisk"
+      # "obs"
+      # "daisydisk"
       "airbuddy"
-      "calibre"
+      # "calibre"
+      "obsidian"
+      "remote-desktop-manager"
+      "viscosity"
+      "drawio"
+      "postman"
     ];
     masApps = {
-      "Parallels Desktop" = 1085114709;
-      "PDF Gear" = 6469021132;
-      "TeleprompterPAD" = 1507218595;
+    #  "Parallels Desktop" = 1085114709;
+    #  "PDF Gear" = 6469021132;
+    #  "TeleprompterPAD" = 1507218595;
       "Bitwarden" = 1352778147;
+      "Perplexity" = 118769127;
     };
   };
 
   system.defaults = {
-    dock.autohide = true;
+    dock.autohide = false;
     dock.mru-spaces =
       false; # i love this, macos will not rearrange the desktops
     dock.magnification = true;
@@ -105,22 +115,22 @@
       "/Applications/1Password.app"
       "/Applications/Bitwarden.app"
       "/Applications/Spotify.app"
-      "/Applications/Rambox.app"
-      "/Applications/Arc.app"
+      "/Applications/PyCharm.app"
+    #  "/Applications/Rambox.app"
+    #  "/Applications/Arc.app"
       "/Applications/Obsidian.app"
-      "/Users/drackthor/Applications/PyCharm Professional Edition.app"
       "/Applications/Google Chrome.app"
     ];
     dock.persistent-others = [
       # sadly need to use CustomUserPreferences at the moment because you can not configure fan etc. here
-      #"/Users/drackthor/Downloads"
+      #"/Users/jan.hoepfner/Downloads"
       #"/Applications"
     ];
     CustomUserPreferences = {
 
     };
 
-    loginwindow.LoginwindowText = "FullStackS Oida!";
+    loginwindow.LoginwindowText = "FullStackS Oida .. Lets Go!";
     finder.AppleShowAllExtensions = true;
     # finder.FXPreferredViewStyle = "clmv"; # does not work
   };

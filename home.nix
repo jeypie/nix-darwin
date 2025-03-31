@@ -12,12 +12,12 @@
 
   programs.git = {
     enable = false;
-    userName = "Daniel Drack";
-    userEmail = "daniel.drack@fullstacks.eu";
+    userName = "Jan Hoepfner";
+    userEmail = "jp@hoepfner.org";
     ignores = [ "*~" ".DS_Store" ];
     extraConfig = {
       core.editor = "nvim";
-      github.user = "DrackThor";
+      github.user = "jeypieitsch";
       init = { defaultBranch = "main"; };
       diff = { external = "${pkgs.difftastic}/bin/difft"; };
     };
@@ -65,13 +65,13 @@
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
       # KUBECONFIG see home/files.nix
-      KUBECONFIG = "/Users/drackthor/.kube/config-local";
+      KUBECONFIG = "/Users/jan.hoepfner/.kube/config-local";
     };
     autocd = true;
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
     initExtra = ''
-      /Users/drackthor/.kube/configs/refresh.sh
+      /Users/jan.hoepfner/.kube/configs/refresh.sh
       function cmdlib() {
         local selected_command
         selected_command=$(cat ~/.library | perl -0 -pe 's/\n+(?!#)/\n\0/g' | bat --plain --language bash --color always |  fzf --read0 --ansi --highlight-line --multi --height=20 --border --prompt="Command: ")
@@ -90,17 +90,18 @@
       l = "ls -lah";
       la = "ls -lah -a";
       dir = "ls -lah -a";
-      code = "pycharm";
+      code = "pyCharm";
+      k = "kubectl";
     };
   };
 
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    fileWidgetCommand = "fd --type f . /Users/drackthor/code";
+    fileWidgetCommand = "fd --type f . /Users/jan.hoepfner/code";
     fileWidgetOptions =
       [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
-    changeDirWidgetCommand = "fd --type d . /Users/drackthor/code";
+    changeDirWidgetCommand = "fd --type d . /Users/jan.hoepfner/code";
     changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
   };
 
