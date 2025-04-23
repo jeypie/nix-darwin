@@ -57,6 +57,7 @@
     # Cisco Anyconnect
     brews = [
         "snyk-cli"
+        "age"
     ];
 
     casks = [
