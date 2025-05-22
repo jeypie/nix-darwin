@@ -58,6 +58,7 @@
     brews = [
         "snyk-cli"
         "age"
+        "shellcheck"
     ];
 
     casks = [
