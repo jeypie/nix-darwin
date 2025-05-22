@@ -25,6 +25,9 @@
 
   programs.zsh = {
     enable = true;
+    initExtra = ''
+       export PATH="$HOME/.rd/bin:$PATH"
+    '';
     enableCompletion = true;
     autosuggestion.enable = true;
     history = {
