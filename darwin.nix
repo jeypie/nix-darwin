@@ -40,7 +40,7 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
-  system.primaryUser = user;
+  system.primaryUser = "user";
 
   # nix.configureBuildUsers = true; # outdated
 
@@ -60,6 +60,8 @@
         "snyk-cli"
         "age"
         "shellcheck"
+        "ansible"
+        "pandoc"
     ];
 
     casks = [
@@ -85,8 +87,8 @@
       "citrix-workspace"
       "elgato-stream-deck"
       "vlc"
-      # "obs"
-      # "daisydisk"
+      "obs"
+      "daisydisk"
       "airbuddy"
       # "calibre"
       "obsidian"
