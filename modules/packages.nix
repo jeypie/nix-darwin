@@ -41,7 +41,6 @@
     terraform
     tilt
     tree
-    unifi
     unixtools.watch
     wget
     yq-go
