@@ -70,9 +70,11 @@
     autocd = true;
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
-    initExtra = ''
-      export PATH="$HOME/.rd/bin:$PATH"
+    initContent = ''
+      # kubeconfig
       /Users/jan.hoepfner/.kube/configs/refresh.sh
+
+      # preview cmd library with "option" + "l"
       function cmdlib() {
         local selected_command
         selected_command=$(cat ~/.library | perl -0 -pe 's/\n+(?!#)/\n\0/g' | bat --plain --language bash --color always |  fzf --read0 --ansi --highlight-line --multi --height=20 --border --prompt="Command: ")
