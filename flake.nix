@@ -30,7 +30,11 @@
     in {
       darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
         # inherir "inputs" from flake.lock to darwinConfiguration
-        specialArgs = { inherit inputs; };
+        # specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          user = "jan.hoepfner";
+        };
 
         system = arch;
         modules = [
