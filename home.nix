@@ -25,9 +25,6 @@
 
   programs.zsh = {
     enable = true;
-    initExtra = ''
-       export PATH="$HOME/.rd/bin:$PATH"
-    '';
     enableCompletion = true;
     autosuggestion.enable = true;
     history = {
@@ -74,6 +71,7 @@
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
     initExtra = ''
+      export PATH="$HOME/.rd/bin:$PATH"
       /Users/jan.hoepfner/.kube/configs/refresh.sh
       function cmdlib() {
         local selected_command
