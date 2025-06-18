@@ -1,5 +1,5 @@
 {
-  description = "jan.hoepfner´s macOS system flake";
+  description = "JeyPiEitsch´s macOS system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -30,11 +30,7 @@
     in {
       darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
         # inherir "inputs" from flake.lock to darwinConfiguration
-        # specialArgs = { inherit inputs; };
-        specialArgs = {
-          inherit inputs;
-          user = "jan.hoepfner";
-        };
+        specialArgs = { inherit inputs; };
 
         system = arch;
         modules = [
