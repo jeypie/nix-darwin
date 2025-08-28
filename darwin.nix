@@ -70,7 +70,7 @@
       "drawio"
       # "google-chrome"
       # "jetbrains-toolbox"
-      # "rambox"
+      "rambox"
       # "steam"
       # "microsoft-office"
       # "microsoft-auto-update"
