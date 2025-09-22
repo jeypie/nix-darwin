@@ -12,16 +12,11 @@
   networking.hostName = "jpBook";
   # networking.localHostName = "jpBook.local";
   networking.knownNetworkServices = [
-    "USB 10/100/1000 LAN"
-    "USB 10/100/1000 LAN 2"
-    "USB 10/100/1000 LAN 3"
-    "USB 10/100/1000 LAN 4"
-    "Wi-Fi"
-    "Thunderbolt Bridge"
-    "iPhone USB USB"
-    "FullStackS Labor RRZ Graz"
+  "Wi-Fi"
+  "Thunderbolt Bridge"
+  "FullStackS Labor RRZ Graz"
   ];
-  networking.dns = [ "8.8.8.8" "1.1.1.1" ];
+  networking.dns = [ "8.8.8.8" "1.1.1.1" "192.168.178.254" ];
   users.users."jan.hoepfner".home = "/Users/jan.hoepfner";
 
   # Auto upgrade nix package and the daemon service.
@@ -84,8 +79,8 @@
       "cleanshot"
       "textsniper"
       "webex"
-      "citrix-workspace"
       "elgato-stream-deck"
+      "elgato-camera-hub"
       "vlc"
       # "obs"
       "daisydisk"
@@ -121,7 +116,7 @@
       "/Applications/Bitwarden.app"
       "/Applications/Spotify.app"
       "/Applications/PyCharm.app"
-    #  "/Applications/Rambox.app"
+      "/Applications/Rambox.app"
     #  "/Applications/Arc.app"
       "/Applications/Obsidian.app"
       "/Applications/Google Chrome.app"
