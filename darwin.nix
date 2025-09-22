@@ -89,7 +89,6 @@
       # "calibre"
       "obsidian"
       "remote-desktop-manager"
-      "viscosity"
       "postman"
     ];
     masApps = {
