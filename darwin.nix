@@ -97,7 +97,6 @@
     #  "PDF Gear" = 6469021132;
     #  "TeleprompterPAD" = 1507218595;
       "Bitwarden" = 1352778147;
-      "Perplexity" = 118769127;
     };
   };
 
