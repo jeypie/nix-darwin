@@ -32,7 +32,6 @@
     nmap
     obsidian
     oh-my-zsh
-    openvpn
     pre-commit
     pyenv
     python313
