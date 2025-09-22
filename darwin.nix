@@ -77,9 +77,9 @@
       "flameshot"
       "fixkey"
       # "istat-menus"
-      "cleanshot"
+      # "cleanshot"
       "textsniper"
-      "webex"
+      #"webex"
       "elgato-stream-deck"
       "elgato-camera-hub"
       "vlc"
@@ -90,7 +90,6 @@
       "obsidian"
       "remote-desktop-manager"
       "viscosity"
-      "drawio"
       "postman"
     ];
     masApps = {
