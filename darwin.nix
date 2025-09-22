@@ -16,7 +16,8 @@
   "Thunderbolt Bridge"
   "FullStackS Labor RRZ Graz"
   ];
-  networking.dns = [ "8.8.8.8" "1.1.1.1" "192.168.178.254" ];
+#  networking.dns = [ "8.8.8.8" "1.1.1.1" "192.168.178.254" ];
+  networking.dns = [ ];
   users.users."jan.hoepfner".home = "/Users/jan.hoepfner";
 
   # Auto upgrade nix package and the daemon service.
