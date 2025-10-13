@@ -134,7 +134,7 @@
       false; # i love this, macos will not rearrange the desktops
     dock.magnification = true;
     dock.persistent-apps = [
-      "${pkgs.iterm}/Applications/iTerm.app"
+      "${pkgs.iterm2}/Applications/iTerm2.app"
       "/Applications/Microsoft Outlook.app"
       # "/System/Applications/Calendar.app"
       "/System/Applications/Mail.app"
