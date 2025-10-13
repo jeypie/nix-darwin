@@ -3,7 +3,7 @@
   fonts.fontconfig.enable = true;
 
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./modules/nvim.nix
     ./modules/packages.nix
     ./home/files.nix
