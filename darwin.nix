@@ -72,6 +72,7 @@
       # "microsoft-auto-update"
       # "microsoft-teams"
       "spotify"
+      "iterm2"
       "wifiman"
       "screen-studio"
       "flameshot"
