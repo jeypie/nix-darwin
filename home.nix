@@ -98,7 +98,7 @@
       l = "ls -lah";
       la = "ls -lah -a";
       dir = "ls -lah -a";
-      code = "pyCharm";
+      code = "open -a IntelliJ\ IDEA";
       k = "kubectl";
     };
   };

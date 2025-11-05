@@ -91,6 +91,7 @@
     casks = [
       "1password"
       "daisydisk"
+      "intellij-idea"
       "drawio"
       # "google-chrome"
       # "jetbrains-toolbox"
@@ -135,6 +136,7 @@
     dock.magnification = true;
     dock.persistent-apps = [
       "${pkgs.iterm2}/Applications/iTerm2.app"
+      "/Applications/IntelliJ IDEA.app"
       "/Applications/Microsoft Outlook.app"
       # "/System/Applications/Calendar.app"
       "/System/Applications/Mail.app"
