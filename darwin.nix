@@ -144,7 +144,6 @@
       "/Applications/1Password.app"
       "/Applications/Bitwarden.app"
       "/Applications/Spotify.app"
-      "/Applications/PyCharm.app"
       "/Applications/Rambox.app"
     #  "/Applications/Arc.app"
       "/Applications/Obsidian.app"
