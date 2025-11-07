@@ -94,7 +94,7 @@
       "intellij-idea"
       "drawio"
       # "google-chrome"
-      # "jetbrains-toolbox"
+      "jetbrains-toolbox"
       "rambox"
       # "steam"
       # "microsoft-office"
