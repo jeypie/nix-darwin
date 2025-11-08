@@ -72,9 +72,9 @@
     # zprof.enable = true;
     initExtra = ''
 
-      # 🐠 Be a goldfish 🐠
-      alias 🐠='printf "\e[3J\e[H\e[2J"; echo "Be a goldfish. 🐠"'
-      be_a_goldfish() { printf "\e[3J\e[H\e[2J"; fc -p; echo "Be a goldfish. 🐠"; }
+      # 🐠 Be like a goldfish 🐠
+      alias 🐠='printf "\e[3J\e[H\e[2J"; echo "Be like a goldfish. 🐠"'
+      be_a_goldfish() { printf "\e[3J\e[H\e[2J"; fc -p; echo "Be like a goldfish. 🐠"; }
 
       # kubeconfig
       /Users/jan.hoepfner/.kube/configs/refresh.sh
