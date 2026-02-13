@@ -12,14 +12,16 @@
 
   programs.git = {
     enable = false;
-    userName = "Jan Hoepfner";
-    userEmail = "jp@hoepfner.org";
     ignores = [ "*~" ".DS_Store" ];
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Jan Hoepfner";
+        email = "jp@hoepfner.org";
+      };
       core.editor = "nvim";
       github.user = "jeypieitsch";
-      init = { defaultBranch = "main"; };
-      diff = { external = "${pkgs.difftastic}/bin/difft"; };
+      init.defaultBranch = "main";
+      diff.external = "${pkgs.difftastic}/bin/difft";
     };
   };
 
@@ -100,6 +102,8 @@
       dir = "ls -lah -a";
       code = "open -a IntelliJ\ IDEA";
       k = "kubectl";
+      h = "helm";
+      t = "terraform";
     };
   };
 
@@ -116,5 +120,11 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  home.file.".config/ghostty/config" = {
+    text = ''
+      font-family = JetBrainsMono Nerd Font
+    '';
   };
 }

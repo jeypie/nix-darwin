@@ -52,11 +52,17 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     # Cisco Anyconnect
+    taps = [
+      "azure/azd"
+    ];
     brews = [
       "azure-cli"
+      "azd"
       "bat"
+      "conftest"
       "direnv"
       "dive"
+      "docker-credential-helper"
       "eza"
       "fd"
       "ffmpeg"
@@ -72,11 +78,16 @@
       "kubernetes-cli"
       "mani"
       "mas"
+      "mtr"
+
       "nmap"
       "openvpn"
+      "opa"
       "pre-commit"
       "pyenv"
       "python@3.12"
+      "ripgrep"
+      "rsync"
       "ruff"
       "snyk-cli"
       "terraform"
@@ -89,43 +100,69 @@
     ];
 
     casks = [
+      # Passwords & Security
       "1password"
-      "daisydisk"
-      "intellij-idea"
-      "drawio"
-      # "google-chrome"
-      "jetbrains-toolbox"
+      "bitwarden"
+
+      # Browsers
+      "brave-browser"
+      "google-chrome"
+
+      # Communication
+      "microsoft-teams"
       "rambox"
-      # "steam"
-      # "microsoft-office"
-      # "microsoft-auto-update"
-      # "microsoft-teams"
-      "spotify"
-      "iterm2"
-      "wifiman"
-      "screen-studio"
-      "flameshot"
-      "fixkey"
-      # "istat-menus"
-      # "cleanshot"
-      "textsniper"
-      #"webex"
-      "elgato-stream-deck"
-      "elgato-camera-hub"
-      "vlc"
-      # "obs"
-      "daisydisk"
-      "airbuddy"
-      # "calibre"
-      "obsidian"
-      "remote-desktop-manager"
+      "webex"
+
+      # Development
+      "claude-code"
+      "chatgpt"
+      "devpod"
+      "drawio"
+      "ghostty"
+      "intellij-idea"
+      "jetbrains-toolbox"
+      "podman-desktop"
       "postman"
+      "rancher"
+
+      # Media & Streaming
+      "qobuz"
+      "roon"
+      "screen-studio"
+      "vlc"
+
+      # Productivity & Office
+      "microsoft-auto-update"
+      "microsoft-office"
+      "obsidian"
+      "raycast"
+
+      # Utilities
+      "airbuddy"
+      "bartender"
+      "calibre"
+      "commander-one"
+      "daisydisk"
+      "elgato-camera-hub"
+      "elgato-stream-deck"
+      "fixkey"
+      "flameshot"
+      "remote-desktop-manager"
+      "textsniper"
+      "wifiman"
+      "windows-app"
+
+      # Fonts
+      "font-jetbrains-mono-nerd-font"
+
+      # Gaming & Other
+      "steam"
     ];
     masApps = {
     #  "Parallels Desktop" = 1085114709;
     #  "PDF Gear" = 6469021132;
     #  "TeleprompterPAD" = 1507218595;
-      "Bitwarden" = 1352778147;
+    #  "Bitwarden" = 1352778147;
     };
   };
 
@@ -135,19 +172,17 @@
       false; # i love this, macos will not rearrange the desktops
     dock.magnification = true;
     dock.persistent-apps = [
-      "${pkgs.iterm2}/Applications/iTerm2.app"
+      "/Applications/Ghostty.app"
       "/Applications/IntelliJ IDEA.app"
       "/Applications/Microsoft Outlook.app"
-      # "/System/Applications/Calendar.app"
       "/System/Applications/Mail.app"
       "/Applications/Microsoft Teams.app"
       "/Applications/1Password.app"
       "/Applications/Bitwarden.app"
-      "/Applications/Spotify.app"
+      "/System/Applications/Music.app"
       "/Applications/Rambox.app"
-    #  "/Applications/Arc.app"
-      "/Applications/Obsidian.app"
       "/Applications/Google Chrome.app"
+      "/Applications/Remote Desktop Manager.app"
     ];
     dock.persistent-others = [
       # sadly need to use CustomUserPreferences at the moment because you can not configure fan etc. here
@@ -158,7 +193,7 @@
 
     };
 
-    loginwindow.LoginwindowText = "FullStackS Oida .. Lets Go!";
+    loginwindow.LoginwindowText = "FullStackS Oida .. !";
     finder.AppleShowAllExtensions = true;
     # finder.FXPreferredViewStyle = "clmv"; # does not work
   };
