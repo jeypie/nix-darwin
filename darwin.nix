@@ -127,7 +127,6 @@
 
       # Media & Streaming
       "qobuz"
-      "roon"
       "screen-studio"
       "vlc"
 
@@ -147,7 +146,6 @@
       "elgato-stream-deck"
       "fixkey"
       "flameshot"
-      "remote-desktop-manager"
       "textsniper"
       "wifiman"
       "windows-app"
