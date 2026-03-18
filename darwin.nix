@@ -79,7 +79,8 @@
       "mani"
       "mas"
       "mtr"
-
+      "kubens"
+      "kubectx"
       "nmap"
       "openvpn"
       "opa"
