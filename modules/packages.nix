@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     cnquery
     cnspec
-    fzf-zsh
     nerd-fonts.meslo-lg
     nix-direnv
     nix-index
