@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }: {
   home.stateVersion = "23.11";
   fonts.fontconfig.enable = true;
-  home.sessionPath = [ "$HOME/.rd/bin" ];
 
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -74,6 +73,7 @@
     # if zsh startup time is slow, try this to debug
     # zprof.enable = true;
     initContent = ''
+      export PATH="$HOME/.rd/bin:$PATH"
 
       # 🐠 Be like a goldfish 🐠
       alias 🐠='printf "\e[3J\e[H\e[2J"; echo "Be like a goldfish. 🐠"'
