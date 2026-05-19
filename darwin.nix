@@ -75,6 +75,7 @@
       "inetutils"
       "jq"
       "k9s"
+      "kubara"
       "kubernetes-cli"
       "mani"
       "mas"
@@ -181,7 +182,9 @@
       "/System/Applications/Music.app"
       "/Applications/Rambox.app"
       "/Applications/Google Chrome.app"
-      "/Applications/Remote Desktop Manager.app"
+      "/Applications/Obsidian.app"
+      "/Applications/Claude.app"
+      "/Applications/draw.io.app"
     ];
     dock.persistent-others = [
       # sadly need to use CustomUserPreferences at the moment because you can not configure fan etc. here

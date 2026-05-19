@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }: {
   home.stateVersion = "23.11";
   fonts.fontconfig.enable = true;
+  home.sessionPath = [ "$HOME/.rd/bin" ];
 
   imports = [
     inputs.nixvim.homeModules.nixvim
