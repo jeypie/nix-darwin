@@ -54,6 +54,7 @@
     # Cisco Anyconnect
     taps = [
       "azure/azd"
+      "kubara-io/tap"
     ];
     brews = [
       "azure-cli"
@@ -75,12 +76,10 @@
       "inetutils"
       "jq"
       "k9s"
-      "kubara"
       "kubernetes-cli"
       "mani"
       "mas"
       "mtr"
-      "kubens"
       "kubectx"
       "nmap"
       "openvpn"
@@ -123,6 +122,7 @@
       "ghostty"
       "intellij-idea"
       "jetbrains-toolbox"
+      "kubara"
       "podman-desktop"
       "postman"
       "rancher"
