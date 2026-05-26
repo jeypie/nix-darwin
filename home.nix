@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }: {
   home.stateVersion = "23.11";
+  home.sessionPath = [ "$HOME/.local/bin" ];
   fonts.fontconfig.enable = true;
 
   imports = [

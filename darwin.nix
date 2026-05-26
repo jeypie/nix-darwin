@@ -84,6 +84,7 @@
       "nmap"
       "openvpn"
       "opa"
+      "pipx"
       "pre-commit"
       "pyenv"
       "python@3.12"
@@ -126,6 +127,7 @@
       "podman-desktop"
       "postman"
       "rancher"
+      "vagrant"
 
       # Media & Streaming
       "qobuz"
@@ -174,6 +176,7 @@
     dock.persistent-apps = [
       "/Applications/Ghostty.app"
       "/Applications/IntelliJ IDEA.app"
+      "/Applications/Microsoft Windows App.app"
       "/Applications/Microsoft Outlook.app"
       "/System/Applications/Mail.app"
       "/Applications/Microsoft Teams.app"
