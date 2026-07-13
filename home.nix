@@ -104,7 +104,7 @@
       l = "ls -lah";
       la = "ls -lah -a";
       dir = "ls -lah -a";
-      code = "open -a IntelliJ\ IDEA";
+      code = "open -a \"IntelliJ IDEA\"";
       k = "kubectl";
       h = "helm";
       t = "terraform";
