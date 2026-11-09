@@ -1,6 +1,8 @@
 { pkgs, inputs, ... }: {
   programs.nixvim = {
     enable = true;
+    # we make nixvim follow our nixpkgs in flake.nix, so pin its source explicitly
+    nixpkgs.source = inputs.nixpkgs;
 
     viAlias = true;
     vimAlias = true;

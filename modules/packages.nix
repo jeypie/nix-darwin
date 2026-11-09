@@ -1,12 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    cnquery
-    cnspec
     nerd-fonts.meslo-lg
     nix-direnv
     nix-index
     nixd
-    nixfmt-rfc-style
+    nixfmt
     oh-my-zsh
     zsh-autosuggestions
     zsh-fzf-tab

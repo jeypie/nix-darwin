@@ -114,11 +114,11 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    fileWidgetCommand = "fd --type f . /Users/jan.hoepfner/code";
-    fileWidgetOptions =
+    fileWidget.command = "fd --type f . /Users/jan.hoepfner/code";
+    fileWidget.options =
       [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
-    changeDirWidgetCommand = "fd --type d . /Users/jan.hoepfner/code";
-    changeDirWidgetOptions = [ "--preview 'tree -C {} | head -200'" ];
+    changeDirWidget.command = "fd --type d . /Users/jan.hoepfner/code";
+    changeDirWidget.options = [ "--preview 'tree -C {} | head -200'" ];
   };
 
   programs.direnv = {

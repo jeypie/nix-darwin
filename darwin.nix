@@ -53,11 +53,24 @@
     onActivation.upgrade = true;
     # Cisco Anyconnect
     taps = [
-      "azure/azd"
-      "kubara-io/tap"
+      # Homebrew >= 6 refuses to load non-official taps unless trusted
+      {
+        name = "azure/azd";
+        trusted = true;
+      }
+      {
+        name = "kubara-io/tap";
+        trusted = true;
+      }
+      {
+        name = "mondoohq/mondoo";
+        trusted = true;
+      }
     ];
     brews = [
       "azure-cli"
+      "mondoohq/mondoo/cnquery"
+      "mondoohq/mondoo/cnspec"
       "azd"
       "bat"
       "conftest"
@@ -149,7 +162,6 @@
       "elgato-camera-hub"
       "elgato-stream-deck"
       "fixkey"
-      "flameshot"
       "textsniper"
       "wifiman"
       "windows-app"
@@ -175,8 +187,8 @@
     dock.magnification = true;
     dock.persistent-apps = [
       "/Applications/Ghostty.app"
-      "/Applications/IntelliJ IDEA.app"
-      "/Applications/Microsoft Windows App.app"
+      "/Users/jan.hoepfner/Applications/IntelliJ IDEA.app"
+      "/Applications/Windows App.app"
       "/Applications/Microsoft Outlook.app"
       "/System/Applications/Mail.app"
       "/Applications/Microsoft Teams.app"
