@@ -117,7 +117,6 @@
     casks = [
       # Passwords & Security
       "1password"
-      "bitwarden"
 
       # Browsers
       "brave-browser"
@@ -141,6 +140,7 @@
       "postman"
       "rancher"
       "vagrant"
+      "visual-studio-code"
 
       # Media & Streaming
       "qobuz"
@@ -176,7 +176,7 @@
     #  "Parallels Desktop" = 1085114709;
     #  "PDF Gear" = 6469021132;
     #  "TeleprompterPAD" = 1507218595;
-    #  "Bitwarden" = 1352778147;
+      "Bitwarden" = 1352778147;
     };
   };
 
@@ -188,6 +188,7 @@
     dock.persistent-apps = [
       "/Applications/Ghostty.app"
       "/Users/jan.hoepfner/Applications/IntelliJ IDEA.app"
+      "/Applications/Visual Studio Code.app"
       "/Applications/Windows App.app"
       "/Applications/Microsoft Outlook.app"
       "/System/Applications/Mail.app"
