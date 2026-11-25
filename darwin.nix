@@ -69,7 +69,6 @@
     ];
     brews = [
       "azure-cli"
-      "mondoohq/mondoo/cnquery"
       "mondoohq/mondoo/cnspec"
       "azd"
       "bat"
@@ -82,6 +81,7 @@
       "ffmpeg"
       "fzf"
       "git"
+      "glab"
       "go"
       "gomplate"
       "graphviz"
